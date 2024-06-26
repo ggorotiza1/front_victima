@@ -1,0 +1,42 @@
+<div>
+    <h2>Formulario de Víctima</h2>
+    <form (ngSubmit)="onSubmit()" #victimForm="ngForm">
+        <div>
+            <label for="nombre_victima">Nombre Victima:</label>
+            <input type="text" id="nombre_victima" [(ngModel)]="victim.nombre_victima" name="nombre_victima" required>
+        </div>
+
+        <h3>Hijos</h3>
+        <div class="child-form-container">
+            <div *ngFor="let child of victim.hijos; let i = index">
+                <div *ngIf="i === currentIndex">
+                    <h4>Hijo {{i + 1}}</h4>
+                    <div>
+                        <label for="nombres_ape">Nombres y Apellidos:</label>
+                        <input type="text" id="nombres_ape" [(ngModel)]="child.nombres_ape" name="nombres_ape" required>
+                    </div>
+                    <div>
+                        <label for="cedula">Cédula:</label>
+                        <input type="text" id="cedula" [(ngModel)]="child.cedula" name="cedula" required>
+                    </div>
+                    <div>
+                        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                        <input type="date" id="fecha_nacimiento" [(ngModel)]="child.fecha_nacimiento"
+                            name="fecha_nacimiento" required>
+                        <p>Edad: {{ calculateAge(child.fecha_nacimiento) }}</p>
+                    </div>
+                    <button type="button" (click)="removeChild(i)">Eliminar Hijo</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <button type="button" (click)="prevChild()" [disabled]="currentIndex === 0">Anterior</button>
+            <button type="button" (click)="nextChild()"
+                [disabled]="currentIndex === victim.hijos.length - 1">Siguiente</button>
+        </div>
+
+        <button type="button" (click)="addChild()">Añadir Hijo</button>
+        <button type="submit">Guardar</button>
+    </form>
+</div>
