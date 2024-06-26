@@ -65,11 +65,18 @@ export class VictimaComponent {
     const edades = this.victim.hijos.map(child => this.calculateAge(child.fecha_nacimiento));
     const estados = this.victim.hijos.map(child => child.estado);
 
-    console.log(JSON.stringify({ nombres_ape }));
-    console.log(JSON.stringify({ cedulas }));
-    console.log(JSON.stringify({ fechas_nacimiento }));
-    console.log(JSON.stringify({ edades }));
-    console.log(JSON.stringify({ estados }));
+
+    const nom_json = JSON.stringify({ nombres_ape });
+    const ced_json = JSON.stringify({ cedulas });
+    const fec_json = JSON.stringify({ fechas_nacimiento });
+    const eda_json = JSON.stringify({ edades });
+    const est_json = JSON.stringify({ estados });
+
+    console.log(nom_json);
+    console.log(ced_json);
+    console.log(fec_json);
+    console.log(eda_json);
+    console.log(est_json);
 
     this.victim.nombre_victima = '';
     this.victim.hijos = [];
