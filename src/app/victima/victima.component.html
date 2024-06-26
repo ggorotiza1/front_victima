@@ -12,12 +12,12 @@
                 <div *ngIf="i === currentIndex">
                     <h4>Hijo {{i + 1}}</h4>
                     <div>
-                        <label for="nombres_ape">Nombres y Apellidos:</label>
-                        <input type="text" id="nombres_ape" [(ngModel)]="child.nombres_ape" name="nombres_ape" required>
-                    </div>
-                    <div>
                         <label for="cedula">Cédula:</label>
                         <input type="text" id="cedula" [(ngModel)]="child.cedula" name="cedula" required>
+                    </div>
+                    <div>
+                        <label for="nombres_ape">Nombres y Apellidos:</label>
+                        <input type="text" id="nombres_ape" [(ngModel)]="child.nombres_ape" name="nombres_ape" required>
                     </div>
                     <div>
                         <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
