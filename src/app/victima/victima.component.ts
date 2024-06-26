@@ -72,11 +72,11 @@ export class VictimaComponent {
     const eda_json = JSON.stringify({ edades });
     const est_json = JSON.stringify({ estados });
 
-    console.log(nom_json);
-    console.log(ced_json);
-    console.log(fec_json);
-    console.log(eda_json);
-    console.log(est_json);
+    localStorage.setItem('nombres_ape', nom_json);
+    localStorage.setItem('cedulas', ced_json);
+    localStorage.setItem('fechas_nacimiento', fec_json);
+    localStorage.setItem('edades', eda_json);
+    localStorage.setItem('estados', est_json);
 
     this.victim.nombre_victima = '';
     this.victim.hijos = [];
